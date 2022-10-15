@@ -1,0 +1,37 @@
+<a [routerLink]="['/']">
+  <h1>MyStore</h1>
+</a>
+
+<a
+  mat-flat-button
+  class="button fancy-button"
+  color="primary"
+  routerLink="/cart"
+>
+  <mat-icon matBadge="{{ totalItems }}" matBadgeColor="warn"
+    >shopping_cart</mat-icon
+  >
+  {{ total | currency }} Checkout</a
+>
+<!--
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+  <a
+    *ngIf="auth.user$ | async as user"
+    mat-flat-button
+    class="button fancy-button"
+    color="primary"
+    href="#"
+  >
+    <mat-icon>account_circle</mat-icon> {{ user.name }}
+    <mat-icon (click)="auth.logout({ returnTo: document.location.origin })"
+      >logout</mat-icon
+    ></a
+  >
+</ng-container>
+
+<ng-template #loggedOut>
+  <a mat-flat-button class="button fancy-button" color="primary" href="#"
+    >Login <mat-icon (click)="auth.loginWithRedirect()">login</mat-icon></a
+  >
+</ng-template>
+-->

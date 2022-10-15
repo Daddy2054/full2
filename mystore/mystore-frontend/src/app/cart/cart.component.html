@@ -1,0 +1,17 @@
+<h2>Cart</h2>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+  <span>{{ item.quantity }}</span>
+  <span>{{ item.quantity * item.price | currency }}</span>
+  <button class="btn btn-primary" (click)="plusOne(item)">+</button>
+  <button class="btn btn-primary" (click)="minusOne(item)">-</button>
+  <!-- <button class="btn btn-primary" (click)="remove(item)">Remove</button> -->
+  <app-remove-button [item]="item"  (removeItemEvent)="remove2($event)"></app-remove-button>
+</div>
+<div>
+  <h2>Total: {{ total | currency }}</h2>
+</div>
+
+<app-customer-form-reactive></app-customer-form-reactive>

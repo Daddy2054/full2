@@ -1,0 +1,196 @@
+<h2>Ship to</h2>
+<div class="container">
+   <form [formGroup]="customerForm" #formDir="ngForm" (ngSubmit)="submitForm()">
+
+<div [hidden]="formDir.submitted">
+      <div
+        class="cross-validation"
+        [class.cross-validation-error]="
+          customerForm.touched || customerForm.dirty
+        "
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input 
+            type="text"
+            id="name"
+            class="form-control"
+            formControlName="name"
+            required 
+          />
+
+          <div
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+            <div *ngIf="name.errors?.['minlength']">
+              Name must be at least 4 characters long.
+            </div>
+          </div>
+        </div>
+
+        <label for="address">Address</label>
+        <input 
+          type="text"
+          id="address"
+          class="form-control"
+          formControlName="address"
+          required 
+        />
+
+<!-- <app-ngmodelchange-component></app-ngmodelchange-component> -->
+
+        <div
+          *ngIf="address.invalid && (address.dirty || address.touched)"
+          class="alert alert-danger"
+        >
+          <div *ngIf="address.errors?.['required']">Address is required.</div>
+          <div *ngIf="address.errors?.['minlength']">
+            Address must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+
+      <p>Complete the form to enable the Submit button.</p>
+      <button
+        type="submit"
+        class="btn btn-default"
+        [disabled]="customerForm.invalid"
+        value="Submit"
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="formDir.resetForm({})"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+
+  <div class="submitted-message" *ngIf="formDir.submitted">
+    <p>You've submitted your form, {{ customerForm.value.name }}!</p>
+
+    <button type="button" (click)="formDir.resetForm({})">Add new data</button>
+
+    <table cellpadding="4" cellspacing="0" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tbody></tbody>
+            </table>
+          </td>
+        </tr>
+        <tr bgcolor="#1976d2" color="white">
+          <td colspan="2">
+            <b>Purchasing Information:</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b><span class="il">Order</span> Date:</b>
+          </td>
+          <td>{{ orderDate.toDateString() }}</td>
+        </tr>
+        <tr>
+          <td>
+            <b><span class="il">Order</span> #:</b>
+          </td>
+          <td>
+            {{ orderDate.getMilliseconds() }}
+          </td>
+        </tr>
+        <tr bgcolor="#1976d2" color="white">
+          <td colspan="2">
+            <b><span>Shipping Details:</span></b>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" width="50%">
+            <b>Shipping Address:</b><br />
+            {{ customerForm.value.name }}<br />
+            {{ customerForm.value.address }}<br />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b><span>Shipping</span> Method:</b>
+          </td>
+          <td>Free Standard delivery</td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tbody></tbody>
+            </table>
+          </td>
+        </tr>
+        <tr></tr>
+
+        <tr bgcolor="#1976d2" color="white">
+          <td colspan="2">
+            <b><span>Order Summary:</span> </b>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <table border="0" cellpadding="1" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td>
+                    <b>Total for this <span class="il">Order</span>:&nbsp;</b>
+                  </td>
+                  <td>
+                    <b> {{ total | currency }}</b>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="2">
+                    <br /><b
+                      >Products on <span class="il">order</span>:&nbsp;</b
+                    >
+
+                    <table
+                      width="100%"
+                      style="
+                        font-family: verdana, arial, helvetica;
+                        font-size: small;
+                      "
+                    >
+                      <tbody>
+                        <tr *ngFor="let item of items" class="shipping-item">
+                          <td valign="top">
+                            <b>{{ item.quantity }} x </b>
+                          </td>
+                          <td>
+                            <b
+                              >{{ item.name }} {{ item.price | currency }} =
+                              {{ item.quantity * item.price | currency }}</b
+                            >
+                            <br />
+                            {{ item.description }}<br />
+                            <br />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
