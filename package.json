@@ -6,7 +6,7 @@
         "frontend:test": "cd mystore/mystore-frontend && npm run test",
         "frontend:e2e": "cd mystore/mystore-frontend && npm run e2e",
         "frontend:lint": "cd mystore/mystore-frontend && npm run lint",
-        "frontend:deploy": "cd mystore/mystore-frontend && ng deploy",
+        "frontend:deploy": "cd mystore/mystore-frontend && npm run deploy",
         "api:install": "cd mystore/mystore-api && npm install .",
         "api:build": "cd mystore/mystore-api && npm run build",
         "api:start": "cd mystore/mystore-api && npm run dev",
