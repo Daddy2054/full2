@@ -24,8 +24,19 @@ NG_DEPLOY_AWS_BUCKET	# a S3 bucket with web hosting config
 NG_DEPLOY_AWS_REGION	# same as AWS_DEFAULT_REGION	
 NG_DEPLOY_AWS_SECRET_ACCESS_KEY # same as AWS_SECRET_ACCESS_KEY
 ```
-4. start build on "main" branch
-5. if install and build are ok , press "approve" to deploy in AWS Cloud.
-6. if You got all green, then go to S3 bucket page to see the frontend app.
+4. Create a PostgreSQL instance in AWS RDS service.
+5. Create a Elastic Beanstalk environment with name that must be noted in "mystore/mystore-api/.elasticbeanstalk/config.yml".there insert environment variables
+```
+ENV = dev
+POSTGRES_DB # must be already created in DB instance
+POSTGRES_HOST # DB endpoint
+POSTGRES_USER # DB instance user
+POSTGRES_PASSWORD # DB instance password
+POSTGRES_PORT # DB instance port
+```
+
+6. start build on "main" branch
+7. if install and build are ok , press "approve" to deploy in AWS Cloud.
+8. if You got all green, then go to S3 bucket page to see the frontend app.
 
 
