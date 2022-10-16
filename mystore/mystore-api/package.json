@@ -11,14 +11,15 @@
     "tsc": "tsc",
     "start-ts": "db-migrate up && nodemon src/server.ts",
     "start": "node server",
-    "clean": "rm -rf dist/ || true && rm -f back.zip",
-    "deploy": "npm run build && eb deploy myStore-162168220685 -verbose",
-    "build": "npm install . && npm run clean && tsc &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json && cd dist && zip -r ../back.zip . && cd .."
+    "clean": "rm -rf dist/ || true",
+    "deploy": "npm run build && cd dist && eb deploy",
+    "build": "npm run clean && tsc &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json ",
+    "build2": "npm install . && npm run clean && tsc &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json && cd dist && zip -r ../back.zip . && cd .."
   },
   "author": "daddy2054",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
@@ -26,7 +27,7 @@
     "pg": "^8.8.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.0",
+    "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jasmine": "^4.3.0",
