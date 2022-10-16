@@ -12,8 +12,8 @@
     "start-ts": "db-migrate up && nodemon src/server.ts",
     "start": "node server",
     "clean": "rm -rf dist/ || true",
-    "deploy": "npm run build && cd dist && eb deploy",
-    "build": "npm run clean && tsc  &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json ",
+    "deploy": "cd dist && eb deploy",
+    "build": "npm run clean && tsc --build --verbose  &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json ",
     "build2": "npm install . && npm run clean && node_modules/typescript/bin/tsc &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json && cd dist && zip -r ../back.zip . && cd .."
   },
   "author": "daddy2054",
