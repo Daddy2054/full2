@@ -23,8 +23,7 @@ jobs:
             echo $(node --version)
             echo "NPM --version" 
             echo $(npm --version)
-            echo "typescript --version" 
-            echo $(node_modules/typescript/bin/tsc --version)            
+        
             npm run frontend:install
       # TODO: Install dependencies in the the backend API          
       - run:
