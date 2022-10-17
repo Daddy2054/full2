@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class ProductService {
   /** GET products from the server */
   getProducts(): Observable<Product[]> {
+    console.log(this.productsUrl)
     return this.http.get<Product[]>(this.productsUrl).pipe(
       //      tap((_) => console.log('fetched products')),
       catchError(this.handleError<Product[]>('getProducts', []))
@@ -37,7 +38,7 @@ export class ProductService {
     };
   }
   constructor(private http: HttpClient) {}
-  private productsUrl = environment.envVar.API_URL+"products"; // URL to web api
+  private productsUrl = environment.envVar.API_URL+"/products"; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
