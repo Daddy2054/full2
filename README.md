@@ -7,7 +7,14 @@ student:daddy2054
 ## Project Architecture
 
 This three part project consist of frontend SPA, API-server and DB instance.
-Everythinhg in ready to CI pipeline for deploying in AWS cloud.
+Everythinhg in ready to CI/CD pipeline for deploying in AWS cloud.
+
+
+[Application Infrasructure](docs/Infrastructure.md)
+
+[Application dependencies](docs/dependencies.md)
+
+[Pipelene overview](docs/pipeline.md)
 
 ## How to Deploy
 Project's tree do not include submodules. two main parts are in the main repo.
@@ -23,16 +30,23 @@ NG_DEPLOY_AWS_ACCESS_KEY_ID	#same as AWS_ACCESS_KEY_ID
 NG_DEPLOY_AWS_BUCKET	# a S3 bucket with web hosting config
 NG_DEPLOY_AWS_REGION	# same as AWS_DEFAULT_REGION	
 NG_DEPLOY_AWS_SECRET_ACCESS_KEY # same as AWS_SECRET_ACCESS_KEY
+API_SERVER # URL of elastic beanstalk environment with API server like http://myenv-api-dev.us-east-1.elasticbeanstalk.com/
+
 ```
-4. Create a PostgreSQL instance in AWS RDS service.
-5. Create a Elastic Beanstalk environment with name that must be noted in "mystore/mystore-api/.elasticbeanstalk/config.yml".there insert environment variables
+4. Create a PostgreSQL instance in AWS RDS service (very expensive!!!), with psql execute 
 ```
-ENV = dev
-POSTGRES_DB # must be already created in DB instance
-POSTGRES_HOST # DB endpoint
+CREATE DATABASE full_stack;
+``` 
+5. Create an Elastic Beanstalk environment with the name _mystore-api-dev_. this name also noted in "mystore/mystore-api/.elasticbeanstalk/config.yml".
+6. Go to this ElasticBeanstalk environment. In Configuration,Software, insert environment variables:
+```
+ENV = dev # don't change this
+POSTGRES_DB # must be already created in DB instance, like "postgres"
+POSTGRES_HOST # DB endpoint, like database-3.ckuijdyizdoj.us-east-1.rds.amazonaws.com
 POSTGRES_USER # DB instance user
 POSTGRES_PASSWORD # DB instance password
-POSTGRES_PORT # DB instance port
+POSTGRES_PORT # DB instance port, like 5432
+
 ```
 
 6. start build on "main" branch

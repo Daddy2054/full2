@@ -1,4 +1,7 @@
+import * as dotenv from "dotenv";
+
+dotenv.config();
 export const environment = {
   production: false,
-  apiServer: 'http://mystore-162168220685.us-east-1.elasticbeanstalk.com/api/products'
-};
+  apiServer: process.env["API_SERVER"]
+  };
