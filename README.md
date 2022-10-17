@@ -17,7 +17,7 @@ Everythinhg in ready to CI/CD pipeline for deploying in AWS cloud.
 [Pipelene overview](docs/pipeline.md)
 
 ## How to Deploy
-Project's tree do not include submodules. two main parts are in the main repo.
+The project's tree do not include submodules. two main parts are in the main repo.
 
 1. Fork repository https://github.com/Daddy2054/full2.1.git
 2. connect it via "Set up Project" in CircleCI
@@ -30,7 +30,7 @@ NG_DEPLOY_AWS_ACCESS_KEY_ID	#same as AWS_ACCESS_KEY_ID
 NG_DEPLOY_AWS_BUCKET	# a S3 bucket with web hosting config
 NG_DEPLOY_AWS_REGION	# same as AWS_DEFAULT_REGION	
 NG_DEPLOY_AWS_SECRET_ACCESS_KEY # same as AWS_SECRET_ACCESS_KEY
-API_SERVER # URL of elastic beanstalk environment with API server like http://myenv-api-dev.us-east-1.elasticbeanstalk.com/
+API_URL # URL of elastic beanstalk environment with API server like http://myenv-api-dev.us-east-1.elasticbeanstalk.com/
 
 ```
 4. Create a PostgreSQL instance in AWS RDS service (very expensive!!!), with psql execute 

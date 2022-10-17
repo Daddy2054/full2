@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng run my-app:collect-vars && ng build --configuration=deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm install -f && ng deploy"
+    "deploy": "npm install -f && ng run my-app:collect-vars && ng deploy --configuration=deploy"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@auth0/auth0-angular": "^1.10.1",
-    "dotenv": "^16.0.3",
+    "ng-process-env": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
