@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
+  production: true,
   envVar: {
-    API_URL: "http://localhost:8080"
+      API_URL: "http://mystore-api-dev.us-east-1.elasticbeanstalk.com"
 }
 };

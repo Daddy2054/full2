@@ -6,15 +6,13 @@
   "scripts": {
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess 'node ./dist/server.js'",
     "jasmine": "jasmine",
-    "build-old": "npx tsc",
     "test": "export ENV=test && npx tsc && db-migrate db:drop full_stack_test && db-migrate db:create full_stack_test && db-migrate up --env test && jasmine  && db-migrate db:drop full_stack_test",
     "tsc": "tsc",
     "start-ts": "db-migrate up && nodemon src/server.ts",
     "start": "node server",
     "clean": "rm -rf dist/ || true",
     "deploy": "npm run build && cd dist && eb deploy",
-    "build": "npm install . && npm run clean && tsc --build --verbose  &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json ",
-    "build2": "npm install . && npm run clean && node_modules/typescript/bin/tsc &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json && cd dist && zip -r ../back.zip . && cd .."
+    "build": "npm install . && npm run clean && npx tsc --build --verbose  &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json "
   },
   "author": "daddy2054",
   "license": "ISC",
@@ -24,8 +22,7 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.8.0",
-    "typescript": "^4.8.2"
+    "pg": "^8.8.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -41,7 +38,7 @@
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
-    "tsc-watch": "^5.0.3"
-
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.8.2"
   }
 }

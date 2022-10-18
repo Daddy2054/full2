@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng run my-app:collect-vars && ng build --configuration=deploy",
+    "build": "ng run my-app:collect-vars && ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm install -f && ng run my-app:collect-vars && ng deploy --configuration=deploy"
+    "deploy": "npm install -f && ng run my-app:collect-vars && ng deploy "
   },
   "private": true,
   "dependencies": {

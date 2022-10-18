@@ -55,11 +55,11 @@
               "sourceMap": true,
               "namedChunks": true
             },
-            "deploy": {
+            "aws": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.deploy.ts"
+                  "with": "src/environments/environment.aws.ts"
                 }
               ]
             }
@@ -101,17 +101,7 @@
         },
         "deploy": {
           "builder": "@jefiozie/ngx-aws-deploy:deploy",
-          "configurations": {
-            "deploy": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.deploy.ts"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": "deploy"
+          "options": {}      
         },
         "collect-vars": {
           "builder": "ng-process-env:collectVars",

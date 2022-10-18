@@ -12,7 +12,7 @@ All is configured to be:
 
 For local development PostgreSQL instance in Docker container will work. Just change these variables in your environment:
 ```
-API_SERVER # URL of elastic beanstalk environment with API server like http://myenv-api-dev.us-east-1.elasticbeanstalk.com/
+API_URL # URL of elastic beanstalk environment with API server like http://myenv-api-dev.us-east-1.elasticbeanstalk.com/
 
 ENV = dev # don't change this
 POSTGRES_DB # must be already created in DB instance, like "postgres"
