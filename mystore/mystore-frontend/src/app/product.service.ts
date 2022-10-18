@@ -38,7 +38,7 @@ export class ProductService {
     };
   }
   constructor(private http: HttpClient) {}
-  private productsUrl = environment.envVar.API_URL+"/products"; // URL to web api
+  private productsUrl = environment.envVar.API_URL+"/api/products"; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
