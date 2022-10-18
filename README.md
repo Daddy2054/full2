@@ -10,12 +10,21 @@ This three part project consist of frontend SPA, API-server and DB instance.
 Everythinhg in ready to CI/CD pipeline for deploying in AWS cloud.
 
 
-[Application Infrasructure](docs/Infrastructure.md)
+[Application Infrasructure](docs/Infrastructure_description.md)
 
-[Application dependencies](docs/dependencies.md)
+[Application dependencies](docs/Application_dependencies.md)
 
-[Pipelene overview](docs/pipeline.md)
+[Pipelene overview](docs/Pipeline_description.md)
 
+Live applicaton: http://bucket1-162168220685.s3-website-us-east-1.amazonaws.com/
+
+ ![live app](docs/live-app.png)
+ ![build](docs/build.png)
+![hold](docs/hold.png)
+![deploy](docs/deploy.png)
+![rds](docs/rds.png)
+![eb](docs/eb.png)
+![s3](docs/s3.png)
 ## How to Deploy
 The project's tree do not include submodules. two main parts are in the main repo.
 
