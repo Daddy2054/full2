@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class ProductService {
   /** GET products from the server */
   getProducts(): Observable<Product[]> {
-    console.log(this.productsUrl)
+  //  console.log(this.productsUrl)
     return this.http.get<Product[]>(this.productsUrl).pipe(
       //      tap((_) => console.log('fetched products')),
       catchError(this.handleError<Product[]>('getProducts', []))

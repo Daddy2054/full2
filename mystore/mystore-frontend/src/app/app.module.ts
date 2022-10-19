@@ -57,6 +57,7 @@ import { CartService } from './cart.service';
       { path: 'products', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
+      { path: '', redirectTo: 'products', pathMatch:'full' },
       //{ path: 'shipping', component: ShippingComponent },
     ]),
     MatIconModule,

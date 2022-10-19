@@ -9,11 +9,11 @@ jobs:
   build:
     docker:
       # the base image can run most needed actions with orbs
-      - image: "cimg/node:18.10.0"
+      - image: "cimg/node:16.12.0"
     steps:
       # install node and checkout code
       - node/install:
-          node-version: '18.10'         
+          node-version: '16.12'         
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
@@ -64,7 +64,11 @@ workflows:
     jobs:
       - build
       - hold:
-          type: approval
+            filters:
+            branches:
+              only:
+                - main
+        type: approval
           requires:
             - build
       - deploy:

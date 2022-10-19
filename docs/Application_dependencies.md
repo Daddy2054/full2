@@ -1,3 +1,24 @@
+# Project dependencies
+
+## Running locally
+
+Node v16.12.0 (npm v8.1.0)
+
+PostgreSQL box in Docker
+
+psql v14.5
+
+## Running in the cloud
+
+Elastic Beanstalk CLI v3.20.3 (Python 3.8.1)
+
+AWS S3 bucket for static frontend hosting
+
+AWS Elastic Beanstalk environment for API server
+
+AWS RDS for database instance
+
+CircleCI for pipelene processing
 # Application dependencies
 
 ## API-server
@@ -30,5 +51,5 @@
 ```
 ## Engine version
 
-Now using node v18.11.0 (npm v8.19.2)
+Now using node v16.12.0
 

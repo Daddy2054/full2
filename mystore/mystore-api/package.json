@@ -11,7 +11,7 @@
     "start-ts": "db-migrate up && nodemon src/server.ts",
     "start": "node server",
     "clean": "rm -rf dist/ || true",
-    "deploy": "npm run build && cd dist && eb deploy",
+    "deploy": "npm run build && chmod +x bin/deploy.sh && cd dist && ../bin/deploy.sh && eb deploy",
     "build": "npm install . && npm run clean && npx tsc --build --verbose  &&  cp -R .elasticbeanstalk dist/.elasticbeanstalk &&  cp package.json dist/package.json "
   },
   "author": "daddy2054",
