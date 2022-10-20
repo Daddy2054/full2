@@ -20,7 +20,3 @@ Everything is ready to CI/CD pipeline for deploying in AWS Cloud.
 
 ## Live applicaton: 
 ## http://bucket1-162168220685.s3-website-us-east-1.amazonaws.com/
-
-
-
-
