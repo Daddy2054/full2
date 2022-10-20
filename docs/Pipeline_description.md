@@ -4,34 +4,36 @@
 
 Config file _.circleci/config.yml_ explain how pipeline in working.
 
-1. Push your commit to Github dev branch of your project
+1. Dev: Push your commit to Github dev branch(or other) of your project
 
-2. Merge dev branch with main branch
+2. Dev: Merge dev branch with main branch
 
-3. This will activate CircleCi pipeline process
+3. CircleCi: This will activate CircleCi pipeline process
 
-4. The docker container with Node v16 will be installed
+4. CircleCi: The docker container with Node v16 will be installed
 
-5. The complete main branch will be dowloaded from Github
+5. CircleCi: The complete main branch will be dowloaded from Github
 
-6. The commands from root package.json file will be executed
+6. CircleCi: The commands from root package.json file will be executed
 
-7. Install packages, compiling/transpiling/building
+7. CircleCi: Install packages, compiling/transpiling/building
 
-8. If result is ok, pipeline is put on hold until manual click on button Approval
+8. CircleCi: If result is ok, pipeline is put on hold until manual click on button Approval
 
-9. Only when approved, pipeline will execute step "deploy" according to package.json
+9. Dev: Only when approved, 
 
-10. in this step, after installing Command Line Interfaces, actual uploading to AWS cloud is processed.
+10. CircleCi: Pipeline will execute step "deploy" according to package.json
+
+11. CircleCi: In this step, after installing Command Line Interfaces, actual uploading to AWS cloud is processed.
 
 ## How to replicate
-The project's tree do not include submodules. two main parts are in the main repo.
+The project's tree do not include submodules. two main parts are in the monorepo.
 
 1. Clone repository https://github.com/Daddy2054/full2.1.git
 
-2. Connect it via "Set up Project" in CircleCI
+2. Connect your repo via "Set up Project" in CircleCI
 
-3. Create a PostgreSQL instance in AWS RDS service (very expensive!!!), 
+3. Create a PostgreSQL instance in AWS RDS service 
 
 4. Change Connectivity & security/Security/VPC security groups/Security group default/Inbound rules/source to 0.0.0.0/0
 
