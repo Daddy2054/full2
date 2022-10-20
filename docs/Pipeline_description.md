@@ -43,7 +43,7 @@ CREATE DATABASE full_stack;
 
 7. Create S3 bucket, publicly accessible, with web hosting
 
-8. in CircleCI "Project Settings/Environment variables" ([see here an example](docs/vars.md)) insert your secrets and paths:
+8. in CircleCI "Project Settings/Environment variables" ([see here an example](vars.md)) insert your secrets and paths:
 ```
 AWS_ACCESS_KEY_ID
 AWS_DEFAULT_REGION	

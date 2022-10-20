@@ -16,15 +16,11 @@ Everything is ready to CI/CD pipeline for deploying in AWS Cloud.
 
 [Pipelene overview, How to Deploy](docs/Pipeline_description.md)
 
+[Screenshoots for submission](docs/submission.md)
+
 ## Live applicaton: 
 ## http://bucket1-162168220685.s3-website-us-east-1.amazonaws.com/
 
- ![live app](docs/live.png)
- ![build](docs/build.png)
-![hold](docs/hold.png)
-![deploy](docs/deploy.png)
-![rds](docs/rds.png)
-![eb](docs/eb.png)
-![s3](docs/s3.png)
+
 
 
