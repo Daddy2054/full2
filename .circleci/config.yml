@@ -65,11 +65,11 @@ workflows:
       - build
       - hold:
             filters:
-            branches:
-              only:
+              branches:
+                only:
                 - main
             type: approval
-              requires:
+            requires:
                 - build
       - deploy:
           requires:
